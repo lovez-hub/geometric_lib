@@ -2,7 +2,6 @@ import math
 import pytest
 from geometric_lib.calculate import calc
 
-
 def test_calc_circle_area():
     fig = 'circle'
     func = 'area'

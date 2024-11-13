@@ -1,5 +1,5 @@
-import circle
-import square
+from geometric_lib import circle
+from geometric_lib import square
 
 figs = ['circle', 'square']
 funcs = ['perimeter', 'area']
