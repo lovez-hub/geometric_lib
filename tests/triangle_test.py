@@ -3,7 +3,7 @@ import pytest
 from geometric_lib.triangle import area, perimeter
 
 
-def test_triangle_area_valid():
+def test_area():
     a, b, c = 3, 4, 5
     expected = 6.0
 
@@ -12,7 +12,7 @@ def test_triangle_area_valid():
     assert math.isclose(result, expected, rel_tol=1e-9)
 
 
-def test_triangle_perimeter_valid():
+def test_per():
     a, b, c = 3, 4, 5
     expected = 12
 
@@ -21,14 +21,14 @@ def test_triangle_perimeter_valid():
     assert result == expected
 
 
-def test_triangle_area_invalid_sides():
+def test_invalid_sides():
     a, b, c = 1, 2, 3
 
     with pytest.raises(ValueError):
         area(a, b, c)
 
 
-def test_triangle_perimeter_negative_side():
+def test_negative_side():
     a, b, c = -3, 4, 5
 
     with pytest.raises(ValueError):

@@ -1,4 +1,4 @@
-name: Python CI
+name: Geometric Lib CI
 
 on:
   push:
@@ -39,7 +39,6 @@ jobs:
       run: |
         pytest 
 
-    - name: Lint code with flake8
+    - name: Lint code with black
       run: |
-        pip install flake8
-        flake8 . 
+        black --check .
