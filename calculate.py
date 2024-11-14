@@ -1,12 +1,9 @@
 from geometric_lib import circle
 from geometric_lib import square
 
-figs = ['circle', 'square']
-funcs = ['perimeter', 'area']
-sizes = {
-    'circle': 1,
-    'square': 1
-}
+figs = ["circle", "square"]
+funcs = ["perimeter", "area"]
+sizes = {"circle": 1, "square": 1}
 
 
 def calc(fig, func, size):
@@ -17,7 +14,9 @@ def calc(fig, func, size):
 
     expected_size = sizes.get(fig)
     if len(size) != expected_size:
-        raise ValueError(f"{fig} {func} expects {expected_size} arguments, got {len(size)}")
+        raise ValueError(
+            f"{fig} {func} expects {expected_size} arguments, got {len(size)}"
+        )
 
     module = globals()[fig]
     if not hasattr(module, func):
@@ -28,8 +27,8 @@ def calc(fig, func, size):
 
 
 if __name__ == "__main__":
-    func = ''
-    fig = ''
+    func = ""
+    fig = ""
     size = []
 
     while fig not in figs:
@@ -40,13 +39,15 @@ if __name__ == "__main__":
 
     while len(size) != sizes.get(fig, 1):
         try:
-            size = list(map(float, input("Input figure sizes separated by space:\n").split()))
+            size = list(
+                map(float, input("Input figure sizes separated by space:\n").split())
+            )
         except ValueError:
             print("Please enter valid numbers.")
             size = []
 
     try:
         result = calc(fig, func, size)
-        print(f'{func} of {fig} is {result}')
+        print(f"{func} of {fig} is {result}")
     except Exception as e:
         print(f"Error: {e}")

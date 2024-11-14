@@ -1,6 +1,7 @@
 import pytest
 from geometric_lib.square import area, perimeter
 
+
 def test_square_area_positive():
     side = 4
     expected = side * side

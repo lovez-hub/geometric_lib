@@ -2,9 +2,10 @@ import math
 import pytest
 from geometric_lib.circle import *
 
+
 def test_circle_area_positive():
     radius = 5
-    expected = math.pi * radius ** 2
+    expected = math.pi * radius**2
 
     result = area(radius)
 
@@ -12,12 +13,12 @@ def test_circle_area_positive():
 
 
 def test_circle_perimeter_positive():
-
     radius = 5
     expected = 2 * math.pi * radius
 
     result = perimeter(radius)
     assert math.isclose(result, expected, rel_tol=1e-9)
+
 
 def test_circle_area_negative_radius():
     radius = -5
