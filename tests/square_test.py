@@ -1,7 +1,7 @@
 import pytest
 from geometric_lib.square import area, perimeter
 
-def test_square_area_positive():
+def test_area_positive():
     side = 4
     expected = side * side
 
@@ -10,7 +10,7 @@ def test_square_area_positive():
     assert result == expected
 
 
-def test_square_perimeter_positive():
+def test_per_positive():
     side = 4
     expected = 4 * side
 
@@ -19,14 +19,14 @@ def test_square_perimeter_positive():
     assert result == expected
 
 
-def test_square_area_negative_side():
+def test_area_negative_side():
     side = -4
 
     with pytest.raises(ValueError):
         area(side)
 
 
-def test_square_perimeter_negative_side():
+def test_perimeter_negative_side():
     side = -4
 
     with pytest.raises(ValueError):
