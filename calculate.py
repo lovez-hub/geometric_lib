@@ -1,23 +1,24 @@
 from geometric_lib import circle
 from geometric_lib import square
 
-globals()['circle'] = circle
-globals()['square'] = square
+globals()["circle"] = circle
+globals()["square"] = square
 
 figs = ["circle", "square"]
 funcs = ["perimeter", "area"]
 sizes = {"circle": 1, "square": 1}
 
+
 def calc(fig, func, size):
     assert fig in figs
     assert func in funcs
-    result = eval(f'{fig}.{func}(*{size})')
+    result = eval(f"{fig}.{func}(*{size})")
     return result
 
 
 if __name__ == "__main__":
-    func = ''
-    fig = ''
+    func = ""
+    fig = ""
     size = []
 
     while fig not in figs:
@@ -30,9 +31,7 @@ if __name__ == "__main__":
         size = list(
             map(
                 int,
-                input(
-                    "Input figure sizes separated by space\n"
-                ).split(),
+                input("Input figure sizes separated by space\n").split(),
             )
         )
     print(calc(fig, func, size))

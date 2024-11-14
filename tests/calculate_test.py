@@ -3,6 +3,7 @@ from geometric_lib import circle
 from geometric_lib import square
 from geometric_lib.calculate import calc
 
+
 def test_circle_area():
     fig = "circle"
     func = "area"
@@ -10,6 +11,7 @@ def test_circle_area():
     expected = circle.area(5)
     result = calc(fig, func, size)
     assert result == expected
+
 
 def test_circle_per():
     fig = "circle"
@@ -19,6 +21,7 @@ def test_circle_per():
     result = calc(fig, func, size)
     assert result == expected
 
+
 def test_square_area():
     fig = "square"
     func = "area"
@@ -26,6 +29,7 @@ def test_square_area():
     expected = square.area(4)
     result = calc(fig, func, size)
     assert result == expected
+
 
 def test_square_per():
     fig = "square"
@@ -35,6 +39,7 @@ def test_square_per():
     result = calc(fig, func, size)
     assert result == expected
 
+
 def test_invalid_fig():
     fig = "hexagon"
     func = "area"
@@ -42,11 +47,10 @@ def test_invalid_fig():
     with pytest.raises(AssertionError):
         calc(fig, func, size)
 
+
 def test_invalid_func():
     fig = "circle"
     func = "volume"
     size = [5]
     with pytest.raises(AssertionError):
         calc(fig, func, size)
-
-
